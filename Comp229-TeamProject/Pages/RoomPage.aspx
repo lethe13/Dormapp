@@ -1,4 +1,4 @@
-﻿<%@ Page Title="GamePage" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="GamePage.aspx.cs" Inherits="Comp229_TeamProject.Pages.GamePage" %>
+﻿<%@ Page Title="GamePage" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="RoomPage.aspx.cs" Inherits="Comp229_TeamProject.Pages.GamePage" %>
 <%--Modified by David He--%>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">

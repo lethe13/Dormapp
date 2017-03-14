@@ -26,13 +26,12 @@ namespace Comp229_TeamProject.Pages
             if (Page.IsValid)
 
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=Robert-PC\SQLEXPRESS;Initial Catalog=GameProfile;Integrated Security=True");
-                SqlCommand addUser = new SqlCommand("INSERT INTO Members(Lname,FName,DateCreated,Username,Email, Password) VALUES(@lastName ,@firstName,GETDATE(),@username,@email, @pwd)", conn);
+                SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
+                SqlCommand addUser = new SqlCommand("INSERT INTO Students(Lname,FName,Username, Password) VALUES(@lastName ,@firstName,@username, @pwd)", conn);
 
                 String lastName = lastNameTB.Text;
                 String firstName = firstNameTB.Text;
-                String username = regUsernameTB.Text;
-                String email = EmailTB.Text;
+                String username = regUsernameTB.Text;        
                 String pass = regPasswordTB.Text;
 
                 try
@@ -40,7 +39,6 @@ namespace Comp229_TeamProject.Pages
                     addUser.Parameters.AddWithValue("@lastName", lastName);
                     addUser.Parameters.AddWithValue("@firstName", firstName);
                     addUser.Parameters.AddWithValue("@username", username);
-                    addUser.Parameters.AddWithValue("@email", email);
                     addUser.Parameters.AddWithValue("@pwd", pass);
                     
                     conn.Open();
@@ -66,9 +64,9 @@ namespace Comp229_TeamProject.Pages
         protected void Login_Click(object sender, EventArgs e)
         {
             /*Check user credentical and login*/
-            SqlConnection connection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=GameProfile;Integrated Security=True");
-            SqlCommand checkUser = new SqlCommand("Select Username FROM GameProfile.[dbo].Members WHERE Username = @username", connection);
-            SqlCommand checkPassword = new SqlCommand("Select Password FROM GameProfile.[dbo].Members WHERE Username = @username", connection);
+            SqlConnection connection = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
+            SqlCommand checkUser = new SqlCommand("Select Username FROM Dorms.[dbo].Students WHERE Username = @username", connection);
+            SqlCommand checkPassword = new SqlCommand("Select Password FROM Dorms.[dbo].Students WHERE Username = @username", connection);
 
             checkUser.Parameters.Add("@username", SqlDbType.NVarChar);
             checkUser.Parameters["@username"].Value = loginUsernameTB.Text;

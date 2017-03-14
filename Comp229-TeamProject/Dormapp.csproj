@@ -184,8 +184,8 @@
   <ItemGroup>
     <Content Include="Assets\Icon.ico" />
     <Content Include="Content\personalCSS.css" />
-    <Content Include="Pages\GameList.aspx" />
-    <Content Include="Pages\GamePage.aspx" />
+    <Content Include="Pages\RoomList.aspx" />
+    <Content Include="Pages\RoomPage.aspx" />
     <Content Include="Pages\HomePage.aspx" />
     <Content Include="Pages\Profile.aspx" />
     <Content Include="Pages\Registration.aspx" />
@@ -214,7 +214,7 @@
     <Content Include="Account\Web.config" />
     <Content Include="ApplicationInsights.config" />
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
-    <Content Include="Pages\UserList.aspx" />
+    <Content Include="Pages\StudentList.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -368,19 +368,19 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Pages\GameList.aspx.cs">
-      <DependentUpon>GameList.aspx</DependentUpon>
+    <Compile Include="Pages\RoomList.aspx.cs">
+      <DependentUpon>RoomList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\GameList.aspx.designer.cs">
-      <DependentUpon>GameList.aspx</DependentUpon>
+    <Compile Include="Pages\RoomList.aspx.designer.cs">
+      <DependentUpon>RoomList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\GamePage.aspx.cs">
-      <DependentUpon>GamePage.aspx</DependentUpon>
+    <Compile Include="Pages\RoomPage.aspx.cs">
+      <DependentUpon>RoomPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\GamePage.aspx.designer.cs">
-      <DependentUpon>GamePage.aspx</DependentUpon>
+    <Compile Include="Pages\RoomPage.aspx.designer.cs">
+      <DependentUpon>RoomPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
@@ -410,12 +410,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Pages\UserList.aspx.cs">
-      <DependentUpon>UserList.aspx</DependentUpon>
+    <Compile Include="Pages\StudentList.aspx.cs">
+      <DependentUpon>StudentList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\UserList.aspx.designer.cs">
-      <DependentUpon>UserList.aspx</DependentUpon>
+    <Compile Include="Pages\StudentList.aspx.designer.cs">
+      <DependentUpon>StudentList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

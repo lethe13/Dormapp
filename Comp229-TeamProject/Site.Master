@@ -48,13 +48,13 @@
                       <span class="icon-bar"></span>
                     </button>
                     
-                    <a class="navbar-brand" runat="server" href="~/Pages/HomePage.aspx">Gardyloo!</a>
+                    <a class="navbar-brand" runat="server" href="~/Pages/HomePage.aspx">Dormapp</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Pages/HomePage.aspx">Home</a></li>
-                        <li><a runat="server" href="~/Pages/GameList.aspx">Games</a></li>
-                        <li><a runat="server" href="~/Pages/UserList.aspx">Users</a></li>
+                        <li><a runat="server" href="~/Pages/RoomList.aspx">Rooms</a></li>
+                        <li><a runat="server" href="~/Pages/StudentList.aspx">Students</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -86,7 +86,7 @@
             <%--For some reason the contentplaceholder kept eating the footer, dispite closing and opening tags not overlapping.--%>
             <hr class="hr" />
             <footer class="masterFooter">
-                <p >&copy; <%: DateTime.Now.Year %> - Gardyloo! - COMP229 - Team Project - David He/Robert Riemens</p>
+                <p >&copy; <%: DateTime.Now.Year %> - Dormapp </p>
             </footer>
         </div>
     </form>

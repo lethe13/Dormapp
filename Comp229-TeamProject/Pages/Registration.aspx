@@ -12,8 +12,6 @@
         <asp:RequiredFieldValidator runat="server" ControlToValidate="lastNameTB" Display="Dynamic" ValidationGroup="registration" ErrorMessage="Last name is Required."></asp:RequiredFieldValidator></td></tr>
         <tr><td>Username:</td><td> <asp:TextBox runat="server" ID="regUsernameTB" MaxLength="10"></asp:TextBox>
         <asp:RequiredFieldValidator runat="server" ControlToValidate="regUsernameTB" Display="Dynamic" ValidationGroup="registration" ErrorMessage="Username is Required."></asp:RequiredFieldValidator></td></tr>
-        <tr><td>Email:</td><td> <asp:TextBox runat="server" ID="EmailTB"></asp:TextBox>
-        <asp:RequiredFieldValidator runat="server" ControlToValidate="EmailTB" Display="Dynamic" ValidationGroup="registration" ErrorMessage="Email is Required."></asp:RequiredFieldValidator></td></tr>
         <tr><td>Password:</td><td> <asp:TextBox runat="server" ID="regPasswordTB" TextMode="Password"></asp:TextBox>
         <asp:RequiredFieldValidator runat="server" ControlToValidate="regPasswordTB" Display="Dynamic" ValidationGroup="registration" ErrorMessage="Password is Required."></asp:RequiredFieldValidator></td></tr>
         <tr><td>Confirm Password:</td><td><asp:TextBox runat="server" ID="confirmPasswordTB" TextMode="Password"></asp:TextBox></td></tr>
