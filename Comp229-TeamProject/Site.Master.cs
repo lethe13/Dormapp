@@ -7,6 +7,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using System.Collections.Specialized;
 
 namespace Comp229_TeamProject
 {
@@ -15,7 +16,7 @@ namespace Comp229_TeamProject
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
-        public string username;
+        public string username ;
         public bool clicked = false;
         protected string profileUsername = HttpContext.Current.User.Identity.Name;
 
@@ -85,16 +86,18 @@ namespace Comp229_TeamProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            
         }
 
         protected void checkingProfile(object sender, EventArgs e)
         { //Changes clicked to true, so profile can see.
             clicked = true;
+           
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
+            Session["Uname"] = null;
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
     }

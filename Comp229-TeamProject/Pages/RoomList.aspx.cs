@@ -22,10 +22,11 @@ namespace Comp229_TeamProject.Pages
             }
         }
 
-     
+        protected void gamelistsql_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
 
-     
         }
+    }
 
        
 

@@ -10,6 +10,7 @@ namespace Comp229_TeamProject.Pages
 {
     public partial class Profile : System.Web.UI.Page
     {
+  
         protected void Page_Load(object sender, EventArgs e)
         {
             /*Work around for not being able to get authentication to work. will send user to registration page if not authenticated. */
@@ -19,47 +20,49 @@ namespace Comp229_TeamProject.Pages
             {
                 Response.Redirect("~/Pages/Registration.aspx");
             }
-
-
-
-
-
-            /*Loads the page with the specific member information*/
-
             string username = "oops";
-
-            if (((SiteMaster)this.Master).clicked == true )
-                {
-                username = HttpContext.Current.User.Identity.Name;
-                }
+            
+        
+            if (Request.QueryString["UserName"] == null)
+            {
+                username = Convert.ToString(Session["Uname"]);
+                
+            }
             else
                 {
                username = Request.QueryString["UserName"];
+              
                 }
+            if (username == Convert.ToString(Session["Uname"]))
+            {
+                editbtndiv.Visible = true;
+            }
             string memberid = null;
-            SqlConnection conn = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=GameProfile;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
             
-            SqlCommand getemail = new SqlCommand("SELECT Email FROM dbo.Members WHERE UserName= @user", conn);
-            SqlCommand getid = new SqlCommand("SELECT MemberID FROM dbo.Members WHERE UserName= @user", conn);
+            SqlCommand getfname = new SqlCommand("SELECT FName FROM dbo.Students WHERE Username= @user", conn);
+            SqlCommand getlname = new SqlCommand("SELECT Lname FROM dbo.Students WHERE Username= @user", conn);
+
+            SqlCommand getid = new SqlCommand("SELECT StudentID FROM dbo.Students WHERE Username= @user", conn);
 
             profileName.Text = username;
             try
             {
 
-                getemail.Parameters.AddWithValue("@user", username);
+                getfname.Parameters.AddWithValue("@user", username);
+                getlname.Parameters.AddWithValue("@user", username);
                 getid.Parameters.AddWithValue("@user", username);
                 conn.Open();
-                EmailID.Text = Convert.ToString(getemail.ExecuteScalar());
+                Fnamelbl.Text = Convert.ToString(getfname.ExecuteScalar());
+                Lnamelbl.Text = Convert.ToString(getlname.ExecuteScalar());
                 memberid = Convert.ToString(getid.ExecuteScalar());
-                gamesowned.SelectParameters["MemberID"].DefaultValue = memberid;
+           
             }
 
             finally
             {
 
                 conn.Close();
-                
-
             }
 
 
@@ -69,7 +72,15 @@ namespace Comp229_TeamProject.Pages
 
         protected void editbtn_Click(object sender, EventArgs e)
         {
-           
+            /*  if (editbtndiv.Visible == true)
+              {
+                  editdiv.Visible = false;
+              }
+              else
+              {
+                  editdiv.Visible = true;
+              }*/
+            editdiv.Visible = true;
         }
 
         protected void submitbtn_Click(object sender, EventArgs e)
@@ -78,19 +89,26 @@ namespace Comp229_TeamProject.Pages
             string user = Request.QueryString["UserName"];
             string fname = Fnamebx.Text;
             string lname = Lnamebx.Text;
-            string email = emailbx.Text;
-            SqlConnection conn = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=GameProfile;Integrated Security=True");
+            string username;
+            SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
+            SqlCommand updateuser = new SqlCommand("UPDATE Students SET FName = @fname, Lname = @fname WHERE Username = @user", conn);
 
-            SqlCommand updateuser = new SqlCommand("UPDATE Members SET Fname = @fname, Lname = @fname,Email = @email WHERE Username = @user", conn);
-            
+            if (Request.QueryString["UserName"] == null)
+            {
+                username = Convert.ToString(Session["Uname"]);
+            }
+            else
+            {
+                username = Request.QueryString["UserName"];
+            }
             try
             {
 
 
                 updateuser.Parameters.AddWithValue("@fname", fname);
                 updateuser.Parameters.AddWithValue("@lname", lname);
-                updateuser.Parameters.AddWithValue("@email", email);
-                updateuser.Parameters.AddWithValue("@user", user);
+                
+                updateuser.Parameters.AddWithValue("@user", username);
 
                 conn.Open();
                 updateuser.ExecuteNonQuery();

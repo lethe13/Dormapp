@@ -13,22 +13,22 @@ namespace Comp229_TeamProject.Pages {
     public partial class GamePage {
         
         /// <summary>
-        /// addGameToCollectionBtn control.
+        /// joinroomBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addGameToCollectionBtn;
+        protected global::System.Web.UI.WebControls.Button joinroomBtn;
         
         /// <summary>
-        /// gameNameLbl control.
+        /// roomnameLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label gameNameLbl;
+        protected global::System.Web.UI.WebControls.Label roomnameLbl;
         
         /// <summary>
         /// descLbl control.
@@ -40,12 +40,21 @@ namespace Comp229_TeamProject.Pages {
         protected global::System.Web.UI.WebControls.Label descLbl;
         
         /// <summary>
-        /// numberOfPlayersLbl control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label numberOfPlayersLbl;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
+        
+        /// <summary>
+        /// gamelistsql control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource gamelistsql;
     }
 }

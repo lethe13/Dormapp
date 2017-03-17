@@ -1,7 +1,4 @@
 ﻿<%@ Page Title="Registration/Login" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="Comp229_TeamProject.Pages.Registration" %>
-
-<%--Replacement for "SignIn" and "Login" page. Just put both next to each other.--%>
-<%--Edited by David He --%>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="col-md-6 divBody heightRegistration" id="registerDiv">
         <h2>Register for an account</h2>

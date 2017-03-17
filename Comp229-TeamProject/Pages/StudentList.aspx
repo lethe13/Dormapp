@@ -1,5 +1,4 @@
-﻿<%@ Page Title="UserList" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="StudentList.aspx.cs" Inherits="Comp229_TeamProject.Pages.UserList" %>
-<%--editted by rob --%>
+﻿<%@ Page Title="UserList" MasterPageFile="../Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="StudentList.aspx.cs" Inherits="Comp229_TeamProject.Pages.UserList" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h1>User List</h1>
     <div class ="divBody small">
@@ -9,7 +8,7 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="userlistsql" Width="265px" AllowPaging="True">
             <Columns>
                 <%--this is where you put the cookie variable in the {0} --%>
-                <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username" />
+                 <asp:HyperLinkField DataNavigateUrlFields="Username" DataNavigateUrlFormatString="Profile.aspx?Username={0}" DataTextField="UserName" HeaderText="UserName" NavigateUrl="~/Pages/Profile.aspx" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="userlistsql" runat="server"

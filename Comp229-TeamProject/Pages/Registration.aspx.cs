@@ -86,6 +86,7 @@ namespace Comp229_TeamProject.Pages
                     if (password != null && String.Equals(password, loginPasswordTB.Text))
                     {
                         FormsAuthentication.SetAuthCookie(username, true);
+                        Session["Uname"] = username;
                         Response.Redirect("~/Pages/Homepage.aspx");
                         
                     }
