@@ -184,6 +184,11 @@
   <ItemGroup>
     <Content Include="Assets\Icon.ico" />
     <Content Include="Content\personalCSS.css" />
+    <Content Include="Pages\Complaint.aspx" />
+    <Content Include="Pages\FdeskMain.aspx" />
+    <Content Include="Pages\FdeskStudentInfo.aspx" />
+    <Content Include="Pages\Frontdesklogin.aspx" />
+    <Content Include="Pages\Payment.aspx" />
     <Content Include="Pages\RoomList.aspx" />
     <Content Include="Pages\RoomPage.aspx" />
     <Content Include="Pages\HomePage.aspx" />
@@ -368,6 +373,41 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Pages\Complaint.aspx.cs">
+      <DependentUpon>Complaint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Complaint.aspx.designer.cs">
+      <DependentUpon>Complaint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FdeskMain.aspx.cs">
+      <DependentUpon>FdeskMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FdeskMain.aspx.designer.cs">
+      <DependentUpon>FdeskMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FdeskStudentInfo.aspx.cs">
+      <DependentUpon>FdeskStudentInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FdeskStudentInfo.aspx.designer.cs">
+      <DependentUpon>FdeskStudentInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Frontdesklogin.aspx.cs">
+      <DependentUpon>Frontdesklogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Frontdesklogin.aspx.designer.cs">
+      <DependentUpon>Frontdesklogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RoomList.aspx.cs">
       <DependentUpon>RoomList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

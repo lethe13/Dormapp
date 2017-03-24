@@ -55,6 +55,7 @@
                         <li><a runat="server" href="~/Pages/HomePage.aspx">Home</a></li>
                         <li><a runat="server" href="~/Pages/RoomList.aspx">Rooms</a></li>
                         <li><a runat="server" href="~/Pages/StudentList.aspx">Students</a></li>
+                        <li><a runat="server" href="~/Pages/Complaint.aspx">Complaints</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -64,7 +65,6 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <%--put cookie value where the {0} is and this will work --%>
                                 <li>
                                     <a ID="profileLink" runat="server" href="~/Pages/Profile.aspx" onclick="checkingProfile">My Profile</a>
                                   
@@ -84,10 +84,10 @@
             </asp:ContentPlaceHolder>
         </div>
         <div class="container body-content">
-            <%--For some reason the contentplaceholder kept eating the footer, dispite closing and opening tags not overlapping.--%>
             <hr class="hr" />
             <footer class="masterFooter">
-                <p >&copy; <%: DateTime.Now.Year %> - Dormapp </p>
+                <a runat="server" href="~/Pages/Frontdesklogin.aspx">Front Desk Login</a>
+                <p >&copy; <%: DateTime.Now.Year %> - Dormapp  </p>
             </footer>
         </div>
     </form>

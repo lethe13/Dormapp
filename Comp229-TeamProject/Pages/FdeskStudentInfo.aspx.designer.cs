@@ -10,60 +10,87 @@
 namespace Comp229_TeamProject.Pages {
     
     
-    public partial class GamePage {
+    public partial class FdeskStudentInfo {
         
         /// <summary>
-        /// joinroomBtn control.
+        /// fnamelbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button joinroomBtn;
+        protected global::System.Web.UI.WebControls.Label fnamelbl;
         
         /// <summary>
-        /// roomnameLbl control.
+        /// lnamelbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label roomnameLbl;
+        protected global::System.Web.UI.WebControls.Label lnamelbl;
         
         /// <summary>
-        /// maxlbl control.
+        /// profilename control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label maxlbl;
+        protected global::System.Web.UI.WebControls.Label profilename;
         
         /// <summary>
-        /// descLbl control.
+        /// fnamebx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descLbl;
+        protected global::System.Web.UI.WebControls.TextBox fnamebx;
         
         /// <summary>
-        /// GridView1 control.
+        /// lnamebx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.TextBox lnamebx;
         
         /// <summary>
-        /// gamelistsql control.
+        /// usernamebx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource gamelistsql;
+        protected global::System.Web.UI.WebControls.TextBox usernamebx;
+        
+        /// <summary>
+        /// passbx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox passbx;
+        
+        /// <summary>
+        /// Updatebx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Updatebx;
+        
+        /// <summary>
+        /// WarningLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label WarningLbl;
     }
 }

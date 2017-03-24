@@ -42,7 +42,7 @@ namespace Comp229_TeamProject.Pages
             
             SqlCommand getfname = new SqlCommand("SELECT FName FROM dbo.Students WHERE Username= @user", conn);
             SqlCommand getlname = new SqlCommand("SELECT Lname FROM dbo.Students WHERE Username= @user", conn);
-
+            SqlCommand getroom = new SqlCommand("SELECT roomID FROM dbo.roomline WHERE studentID= @sid", conn);
             SqlCommand getid = new SqlCommand("SELECT StudentID FROM dbo.Students WHERE Username= @user", conn);
 
             profileName.Text = username;
@@ -56,7 +56,9 @@ namespace Comp229_TeamProject.Pages
                 Fnamelbl.Text = Convert.ToString(getfname.ExecuteScalar());
                 Lnamelbl.Text = Convert.ToString(getlname.ExecuteScalar());
                 memberid = Convert.ToString(getid.ExecuteScalar());
-           
+                getroom.Parameters.AddWithValue("@sid", memberid);
+                roomlbl.Text = Convert.ToString(getroom.ExecuteScalar());
+
             }
 
             finally
@@ -112,7 +114,8 @@ namespace Comp229_TeamProject.Pages
 
                 conn.Open();
                 updateuser.ExecuteNonQuery();
-                Response.Redirect(Request.RawUrl);
+                String url = String.Format("Profile.aspx?Username={0}", user);
+                Response.Redirect(url);
             }
 
             finally
@@ -122,6 +125,52 @@ namespace Comp229_TeamProject.Pages
 
 
             }
+        }
+
+        protected void paybtn_Click(object sender, EventArgs e)
+        {
+            string username;
+            if (Request.QueryString["UserName"] == null)
+            {
+                username = Convert.ToString(Session["Uname"]);
+
+            }
+            else
+            {
+                username = Request.QueryString["UserName"];
+
+            }
+            String url = String.Format("Payment.aspx?UserName={0}", username);
+            Response.Redirect(url);
+        }
+
+        protected void leavebtn_Click(object sender, EventArgs e)
+        {
+            string user = Convert.ToString(Session["Uname"]);
+            int SID;
+            SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
+            SqlCommand getstudentid = new SqlCommand("SELECT StudentID FROM Students WHERE Username = @username", conn);
+            SqlCommand removeroom = new SqlCommand("DELETE FROM dbo.roomline WHERE studentID = @SID  ", conn);
+
+         
+                try
+                {
+
+                    
+                    conn.Open();
+                    getstudentid.Parameters.AddWithValue("@username", user);
+                    SID = Convert.ToInt32(getstudentid.ExecuteScalar());
+                    removeroom.Parameters.AddWithValue("@SID", SID);
+                     removeroom.ExecuteNonQuery();
+            }
+
+                finally
+                {
+                    conn.Close();
+                String url = String.Format("Profile.aspx?Username={0}", user);
+                Response.Redirect(url);
+            }
+            
         }
     }
 }

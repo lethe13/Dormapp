@@ -11,6 +11,7 @@
         <div class="divBody halfSize left">
             <p>First Name:<asp:Label runat="server" ID="Fnamelbl"></asp:Label></p>
             <p>Last Name:<asp:Label runat="server" ID="Lnamelbl"></asp:Label></p>
+            <p>Room:<asp:Label runat="server" ID="roomlbl">Not In a Room</asp:Label></p>
            
       
         </div>
@@ -18,7 +19,13 @@
      
       
         <div ID="editbtndiv" runat="server" class ="divBody" visible="false">
-            <p> <asp:Button ID="editbtn" runat="server" Text="Edit Profile" OnClick="editbtn_Click" /></p>
+            <p> <asp:Button ID="editbtn" runat="server" Text="Edit Profile" OnClick="editbtn_Click" Width="109px" /></p>
+            <p> 
+                <asp:Button ID="paybtn" runat="server" OnClick="paybtn_Click" Text="Pay Bill" Width="109px" />
+            </p>
+            <p> 
+                <asp:Button ID="leavebtn" runat="server" OnClick="leavebtn_Click" Text="Leave Room" Width="109px" />
+            </p>
             </div>
            <br />
      <br />

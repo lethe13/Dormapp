@@ -10,43 +10,25 @@
 namespace Comp229_TeamProject.Pages {
     
     
-    public partial class GamePage {
+    public partial class FdeskMain {
         
         /// <summary>
-        /// joinroomBtn control.
+        /// searchbx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button joinroomBtn;
+        protected global::System.Web.UI.WebControls.TextBox searchbx;
         
         /// <summary>
-        /// roomnameLbl control.
+        /// searchbtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label roomnameLbl;
-        
-        /// <summary>
-        /// maxlbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label maxlbl;
-        
-        /// <summary>
-        /// descLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descLbl;
+        protected global::System.Web.UI.WebControls.Button searchbtn;
         
         /// <summary>
         /// GridView1 control.
@@ -58,12 +40,12 @@ namespace Comp229_TeamProject.Pages {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// gamelistsql control.
+        /// userlistsql control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource gamelistsql;
+        protected global::System.Web.UI.WebControls.SqlDataSource userlistsql;
     }
 }
