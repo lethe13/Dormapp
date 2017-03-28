@@ -91,8 +91,48 @@ namespace Comp229_TeamProject
 
         protected void checkingProfile(object sender, EventArgs e)
         { //Changes clicked to true, so profile can see.
-            clicked = true;
-           
+            
+
+            string role = "Student";
+            if (Session["Role"] != null)
+            {
+                role = Session["Role"].ToString();
+            }
+            if (role == "FDESK")
+            {
+                Response.Redirect("~/Pages/FdeskMain.aspx");
+            }
+            else if (role == "ADMIN")
+            {
+                Response.Redirect("~/Pages/Adminmain.aspx");
+            }
+            else
+            {
+                clicked = true;
+                Response.Redirect("~/Pages/Profile.aspx");
+            }
+        }
+
+        protected void gotopage(object sender, EventArgs e)
+        { //Changes clicked to true, so profile can see.
+            string role = "Student";
+            if (Session["Role"] != null)
+            {
+                role = Session["Role"].ToString();
+            }
+            if (role == "FDESK")
+            {
+                Response.Redirect("~/Pages/FdeskMain.aspx");
+            }
+            else if (role == "ADMIN")
+            {
+                Response.Redirect("~/Pages/Adminmain.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Pages/HomePage.aspx");
+            }
+
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

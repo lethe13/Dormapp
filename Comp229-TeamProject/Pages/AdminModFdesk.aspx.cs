@@ -6,9 +6,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Comp229_TeamProject.Pages
+namespace Dormapp
 {
-    public partial class FdeskStudentInfo : System.Web.UI.Page
+    public partial class AdminModFdesk : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,25 +25,23 @@ namespace Comp229_TeamProject.Pages
                 username = Request.QueryString["UserName"];
 
             }
-          
-            string memberid = null;
+
+           
             SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
 
-            SqlCommand getfname = new SqlCommand("SELECT FName FROM dbo.Students WHERE Username= @user", conn);
-            SqlCommand getlname = new SqlCommand("SELECT Lname FROM dbo.Students WHERE Username= @user", conn);
+            SqlCommand getfname = new SqlCommand("SELECT FName FROM dbo.Fdesk WHERE FdeskID= @user", conn);
+            SqlCommand getlname = new SqlCommand("SELECT Lname FROM dbo.Fdesk WHERE FdeskID= @user", conn);
 
-            SqlCommand getid = new SqlCommand("SELECT StudentID FROM dbo.Students WHERE Username= @user", conn);
             profilename.Text = username;
             try
             {
 
                 getfname.Parameters.AddWithValue("@user", username);
                 getlname.Parameters.AddWithValue("@user", username);
-                getid.Parameters.AddWithValue("@user", username);
                 conn.Open();
                 fnamelbl.Text = Convert.ToString(getfname.ExecuteScalar());
                 lnamelbl.Text = Convert.ToString(getlname.ExecuteScalar());
-                memberid = Convert.ToString(getid.ExecuteScalar());
+               
 
             }
 
@@ -60,17 +58,15 @@ namespace Comp229_TeamProject.Pages
 
             {
                 SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
-                SqlCommand updatefname = new SqlCommand("UPDATE Students SET FName = @FName WHERE Username = @username", conn);
-                SqlCommand updatelname = new SqlCommand("UPDATE Students SET LName = @LName WHERE Username = @username", conn);
-                SqlCommand updateuname = new SqlCommand("UPDATE Students SET Username = @newuser WHERE Username = @username", conn);
-                SqlCommand updatepass = new SqlCommand("UPDATE Students SET Password = @pass WHERE Username = @username", conn);
+                SqlCommand updatefname = new SqlCommand("UPDATE Fdesk SET FName = @FName WHERE FdeskID = @username", conn);
+                SqlCommand updatelname = new SqlCommand("UPDATE Fdesk SET LName = @LName WHERE FdeskID = @username", conn);
+                SqlCommand updatepass = new SqlCommand("UPDATE Fdesk SET Password = @pass WHERE FdeskID = @username", conn);
 
                 string username = Request.QueryString["UserName"];
                 string lastName = lnamebx.Text;
                 string firstName = fnamebx.Text;
-                string newusername = usernamebx.Text;
                 string pass = passbx.Text;
-                
+
 
                 try
                 {
@@ -78,8 +74,6 @@ namespace Comp229_TeamProject.Pages
                     updatefname.Parameters.AddWithValue("@username", username);
                     updatelname.Parameters.AddWithValue("@LName", lastName);
                     updatelname.Parameters.AddWithValue("@username", username);
-                    updateuname.Parameters.AddWithValue("@newuser", newusername);
-                    updateuname.Parameters.AddWithValue("@username", username);
                     updatepass.Parameters.AddWithValue("@FName", firstName);
                     updatepass.Parameters.AddWithValue("username", username);
 
@@ -96,10 +90,7 @@ namespace Comp229_TeamProject.Pages
                     {
                         updatepass.ExecuteNonQuery();
                     }
-                    if (usernamebx.Text != "")
-                    {
-                        updateuname.ExecuteNonQuery();
-                    }
+
                     WarningLbl.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 }
                 /*  catch (SqlException ex)
@@ -113,13 +104,7 @@ namespace Comp229_TeamProject.Pages
                 finally
                 {
                     conn.Close();
-                    if (usernamebx.Text != "")
-                    {
-                        username = newusername;
-                        
-                    }
-                  
-                   String url = String.Format("FdeskStudentInfo.aspx?UserName={0}", username);
+                    String url = String.Format("AdminModFdesk.aspx?UserName={0}", username);
                     Response.Redirect(url);
                 }
 
@@ -129,7 +114,7 @@ namespace Comp229_TeamProject.Pages
         protected void deletebtn_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
-            SqlCommand delete = new SqlCommand("DELETE FROM Students WHERE Username = @username", conn);
+            SqlCommand delete = new SqlCommand("DELETE FROM Fdesk WHERE FdeskID = @username", conn);
             string username = Request.QueryString["UserName"];
             try
             {
@@ -137,10 +122,10 @@ namespace Comp229_TeamProject.Pages
 
 
                 conn.Open();
-               
-    
-                    delete.ExecuteNonQuery();
-                
+
+
+                delete.ExecuteNonQuery();
+
                 WarningLbl.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
             /*  catch (SqlException ex)
@@ -154,7 +139,7 @@ namespace Comp229_TeamProject.Pages
             finally
             {
                 conn.Close();
-                String url = String.Format("FdeskMain.aspx");
+                String url = String.Format("AdminMain.aspx");
                 Response.Redirect(url);
             }
         }

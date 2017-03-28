@@ -42,6 +42,7 @@
             </div>
                     <div ID="Fdeskdiv" runat="server" class ="divBody" visible="false">
                         <asp:Button ID="Evictdiv" runat="server" Text="Evict" OnClick="Evictdiv_Click" />
+            &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Delete Student" />
             </div>
         
 

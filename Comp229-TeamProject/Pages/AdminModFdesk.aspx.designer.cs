@@ -7,55 +7,73 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Comp229_TeamProject.Pages {
+namespace Dormapp {
     
     
-    public partial class Adminmain {
+    public partial class AdminModFdesk {
         
         /// <summary>
-        /// firstNameTB control.
+        /// fnamelbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox firstNameTB;
+        protected global::System.Web.UI.WebControls.Label fnamelbl;
         
         /// <summary>
-        /// lastNameTB control.
+        /// lnamelbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lastNameTB;
+        protected global::System.Web.UI.WebControls.Label lnamelbl;
         
         /// <summary>
-        /// regUsernameTB control.
+        /// profilename control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox regUsernameTB;
+        protected global::System.Web.UI.WebControls.Label profilename;
         
         /// <summary>
-        /// regPasswordTB control.
+        /// fnamebx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox regPasswordTB;
+        protected global::System.Web.UI.WebControls.TextBox fnamebx;
         
         /// <summary>
-        /// confirmPasswordTB control.
+        /// lnamebx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox confirmPasswordTB;
+        protected global::System.Web.UI.WebControls.TextBox lnamebx;
+        
+        /// <summary>
+        /// passbx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox passbx;
+        
+        /// <summary>
+        /// Updatebx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Updatebx;
         
         /// <summary>
         /// WarningLbl control.
@@ -67,21 +85,12 @@ namespace Comp229_TeamProject.Pages {
         protected global::System.Web.UI.WebControls.Label WarningLbl;
         
         /// <summary>
-        /// modifybtn control.
+        /// deletebtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button modifybtn;
-        
-        /// <summary>
-        /// modifybtn0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button modifybtn0;
+        protected global::System.Web.UI.WebControls.Button deletebtn;
     }
 }

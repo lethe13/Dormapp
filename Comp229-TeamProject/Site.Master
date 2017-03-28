@@ -1,12 +1,11 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Comp229_TeamProject.SiteMaster" %>
 
 <!DOCTYPE html>
-<!--Master Page modified by David He-->
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Gardyloo!</title>
+    <title><%: Page.Title %> - Dormapp!</title>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
@@ -48,7 +47,7 @@
                       <span class="icon-bar"></span>
                     </button>
                     
-                    <a class="navbar-brand" runat="server" href="~/Pages/HomePage.aspx">Dormapp</a>
+                    <a class="navbar-brand" runat="server" onServerClick="gotopage" >Dormapp</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -66,7 +65,7 @@
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <a ID="profileLink" runat="server" href="~/Pages/Profile.aspx" onclick="checkingProfile">My Profile</a>
+                                    <a ID="profileLink" runat="server"  onServerclick="checkingProfile">My Profile</a>
                                   
                                 </li>
                                 <li>

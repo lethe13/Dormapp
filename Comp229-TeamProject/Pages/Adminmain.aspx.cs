@@ -14,6 +14,10 @@ namespace Comp229_TeamProject.Pages
         {
 
         }
+        protected void Modify_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/AdminUsers.aspx");
+        }
         protected void Register_Click(object sender, EventArgs e)
         {
             /*Creates a new user*/
@@ -21,14 +25,16 @@ namespace Comp229_TeamProject.Pages
 
             {
                 SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
-                SqlCommand addUser = new SqlCommand("INSERT INTO Fdesk(Fname,LName, Password) VALUES(@lastName ,@firstName, @pwd)", conn);
+                SqlCommand addUser = new SqlCommand("INSERT INTO Fdesk(AdminID,Fname,LName, Password) VALUES(@ID,@lastName ,@firstName, @pwd)", conn);
 
                 String lastName = lastNameTB.Text;
                 String firstName = firstNameTB.Text;
                 String pass = regPasswordTB.Text;
+                String username = regUsernameTB.Text;
 
                 try
                 {
+                    addUser.Parameters.AddWithValue("@ID", username);
                     addUser.Parameters.AddWithValue("@lastName", lastName);
                     addUser.Parameters.AddWithValue("@firstName", firstName);
                     addUser.Parameters.AddWithValue("@pwd", pass);
@@ -48,9 +54,15 @@ namespace Comp229_TeamProject.Pages
                 finally
                 {
                     conn.Close();
+
                 }
 
             }
+        }
+
+        protected void ModifyStud_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/FdeskMain.aspx");
         }
     }
 }

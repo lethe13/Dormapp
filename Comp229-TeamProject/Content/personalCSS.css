@@ -83,8 +83,9 @@
 .heightRegistration 
 /*Div height for Registration*/
 {
-    height: 300px;
-
+    height: 476px;
+    top: 0px;
+    left: 0px;
 }
 .heightGamePages
 /*Div height for GamePages*/

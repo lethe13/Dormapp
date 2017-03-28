@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Comp229_TeamProject</RootNamespace>
-    <AssemblyName>Comp229-TeamProject</AssemblyName>
+    <RootNamespace>Dormapp</RootNamespace>
+    <AssemblyName>Dormapp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -182,10 +182,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\AdminModFdesk.aspx" />
     <Content Include="Assets\Icon.ico" />
     <Content Include="Content\personalCSS.css" />
     <Content Include="Pages\Adminlogin.aspx" />
     <Content Include="Pages\Adminmain.aspx" />
+    <Content Include="Pages\AdminUsers.aspx" />
     <Content Include="Pages\Complaint.aspx" />
     <Content Include="Pages\ComplaintDetails.aspx" />
     <Content Include="Pages\FdeskComplaints.aspx" />
@@ -376,6 +378,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AdminModFdesk.aspx.cs">
+      <DependentUpon>AdminModFdesk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminModFdesk.aspx.designer.cs">
+      <DependentUpon>AdminModFdesk.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Pages\Adminlogin.aspx.cs">
       <DependentUpon>Adminlogin.aspx</DependentUpon>
@@ -390,6 +399,13 @@
     </Compile>
     <Compile Include="Pages\Adminmain.aspx.designer.cs">
       <DependentUpon>Adminmain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminUsers.aspx.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminUsers.aspx.designer.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Complaint.aspx.cs">
       <DependentUpon>Complaint.aspx</DependentUpon>

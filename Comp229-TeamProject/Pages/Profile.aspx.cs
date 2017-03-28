@@ -211,5 +211,37 @@ namespace Comp229_TeamProject.Pages
 
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
+            SqlCommand removestudent = new SqlCommand("DELETE FROM dbo.Students WHERE studentID = @SID  ", conn);
+            SqlCommand getstudentid = new SqlCommand("SELECT StudentID FROM Students WHERE Username = @username", conn);
+            string user = "";
+            int SID;
+
+            if (Request.QueryString["UserName"] != null)
+            {
+                user = Convert.ToString(Request.QueryString["UserName"]);
+
+            }
+            try
+            {
+                conn.Open();
+                getstudentid.Parameters.AddWithValue("@username", user);
+                SID = Convert.ToInt32(getstudentid.ExecuteScalar());
+                removestudent.Parameters.AddWithValue("@SID", SID);
+                removestudent.ExecuteNonQuery();
+            }
+
+            finally
+            {
+                conn.Close();
+                String url = String.Format("FdeskMain.aspx");
+                Response.Redirect(url);
+            }
+            
+             
+        }
     }
 }

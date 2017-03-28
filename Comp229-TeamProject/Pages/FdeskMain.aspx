@@ -4,7 +4,7 @@
      <p><asp:TextBox ID="searchbx" runat="server"></asp:TextBox><asp:Button ID="searchbtn" runat="server" Text="Search" OnClick="searchbtn_Click" /></p>      
       <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="userlistsql" Width="265px" AllowPaging="True">
             <Columns>
-                 <asp:HyperLinkField DataNavigateUrlFields="Username" DataNavigateUrlFormatString="Profile.aspx?Username={0}" DataTextField="UserName" HeaderText="UserName" NavigateUrl="~/Pages/Profile.aspx" />
+                 <asp:HyperLinkField DataNavigateUrlFields="Username" DataNavigateUrlFormatString="FdeskStudentInfo.aspx?Username={0}" DataTextField="UserName" HeaderText="UserName" NavigateUrl="~/Pages/FdeskStudentInfo.aspx" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="userlistsql" runat="server"
