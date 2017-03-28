@@ -1,10 +1,9 @@
-﻿<%@ Page Title="Frontdesklogin" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="Frontdesklogin.aspx.cs" Inherits="Comp229_TeamProject.Pages.Frontdesklogin" %>
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    
-    <div class="col-md-6 divBody heightRegistration" id="loginDiv">
-        <h2>Front Desk Login</h2>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Adminlogin.aspx.cs" Inherits="Comp229_TeamProject.Pages.AdminLogin" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+        <div class="col-md-6 divBody heightRegistration" id="loginDiv">
+        <h2>Admin Login</h2>
         <table class="tableFillout">
-        <tr><td>Front Desk ID:</td><td> <asp:TextBox runat="server" ID="loginUsernameTB"></asp:TextBox>
+        <tr><td>Admin ID:</td><td> <asp:TextBox runat="server" ID="loginUsernameTB"></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" ControlToValidate="loginUsernameTB" Display="Dynamic" ValidationGroup="login" ErrorMessage="ID is Required."></asp:RequiredFieldValidator>
                               </td></tr>
 
@@ -16,4 +15,4 @@
         <asp:Button CssClass="btn" runat="server" Text="Login" Onclick="Login_Click" />
         <asp:Label runat="server" ID="WarningLblLogin"></asp:Label>
     </div>
-    </asp:Content>
+</asp:Content>

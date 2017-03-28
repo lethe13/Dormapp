@@ -87,6 +87,7 @@
             <hr class="hr" />
             <footer class="masterFooter">
                 <a runat="server" href="~/Pages/Frontdesklogin.aspx">Front Desk Login</a>
+                <a runat="server" href="~/Pages/Adminlogin.aspx">Admin Login</a>
                 <p >&copy; <%: DateTime.Now.Year %> - Dormapp  </p>
             </footer>
         </div>

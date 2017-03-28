@@ -10,33 +10,24 @@
 namespace Comp229_TeamProject.Pages {
     
     
-    public partial class Complaint {
+    public partial class ComplaintDetails {
         
         /// <summary>
-        /// complaintbx control.
+        /// detailslbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox complaintbx;
+        protected global::System.Web.UI.WebControls.Label detailslbl;
         
         /// <summary>
-        /// Label1 control.
+        /// deletebtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// submitbtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submitbtn;
+        protected global::System.Web.UI.WebControls.Button deletebtn;
     }
 }

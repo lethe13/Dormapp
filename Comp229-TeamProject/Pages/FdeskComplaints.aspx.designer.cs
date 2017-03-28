@@ -10,33 +10,24 @@
 namespace Comp229_TeamProject.Pages {
     
     
-    public partial class Complaint {
+    public partial class FdeskComplaints {
         
         /// <summary>
-        /// complaintbx control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox complaintbx;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// Label1 control.
+        /// userlistsql control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// submitbtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submitbtn;
+        protected global::System.Web.UI.WebControls.SqlDataSource userlistsql;
     }
 }

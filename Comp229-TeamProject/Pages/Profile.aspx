@@ -40,6 +40,9 @@
 
                 <p> <asp:Button ID="submitbtn" runat="server" Text="Submit" OnClick="submitbtn_Click" /></p>
             </div>
+                    <div ID="Fdeskdiv" runat="server" class ="divBody" visible="false">
+                        <asp:Button ID="Evictdiv" runat="server" Text="Evict" OnClick="Evictdiv_Click" />
+            </div>
         
 
 

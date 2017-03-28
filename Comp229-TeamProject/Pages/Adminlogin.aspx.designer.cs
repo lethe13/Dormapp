@@ -10,33 +10,33 @@
 namespace Comp229_TeamProject.Pages {
     
     
-    public partial class Complaint {
+    public partial class AdminLogin {
         
         /// <summary>
-        /// complaintbx control.
+        /// loginUsernameTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox complaintbx;
+        protected global::System.Web.UI.WebControls.TextBox loginUsernameTB;
         
         /// <summary>
-        /// Label1 control.
+        /// loginPasswordTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.TextBox loginPasswordTB;
         
         /// <summary>
-        /// submitbtn control.
+        /// WarningLblLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submitbtn;
+        protected global::System.Web.UI.WebControls.Label WarningLblLogin;
     }
 }

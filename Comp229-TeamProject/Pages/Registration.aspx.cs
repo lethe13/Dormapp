@@ -87,6 +87,7 @@ namespace Comp229_TeamProject.Pages
                     {
                         FormsAuthentication.SetAuthCookie(username, true);
                         Session["Uname"] = username;
+                        Session["Role"] = "STUDENT";
                         Response.Redirect("~/Pages/Homepage.aspx");
                         
                     }

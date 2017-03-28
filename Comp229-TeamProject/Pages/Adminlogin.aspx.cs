@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace Comp229_TeamProject.Pages
 {
-    public partial class Frontdesklogin : System.Web.UI.Page
+    public partial class AdminLogin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,15 +19,12 @@ namespace Comp229_TeamProject.Pages
 
             }
         }
-
-       
-
         protected void Login_Click(object sender, EventArgs e)
         {
             /*Check user credentical and login*/
             SqlConnection connection = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
-            SqlCommand checkUser = new SqlCommand("Select FdeskID FROM Dorms.[dbo].Fdesk WHERE FdeskID = @username", connection);
-            SqlCommand checkPassword = new SqlCommand("Select Password FROM Dorms.[dbo].Fdesk WHERE FdeskID = @username", connection);
+            SqlCommand checkUser = new SqlCommand("Select AdminID FROM Dorms.[dbo].Admin WHERE AdminID = @username", connection);
+            SqlCommand checkPassword = new SqlCommand("Select Password FROM Dorms.[dbo].Admin WHERE AdminID = @username", connection);
 
             checkUser.Parameters.Add("@username", SqlDbType.NVarChar);
             checkUser.Parameters["@username"].Value = loginUsernameTB.Text;
@@ -39,7 +36,7 @@ namespace Comp229_TeamProject.Pages
             {
                 connection.Open();
                 string username = checkUser.ExecuteScalar().ToString();
-                
+
                 if (username != null && String.Equals(username, loginUsernameTB.Text))
                 {
                     string password = checkPassword.ExecuteScalar().ToString();
@@ -48,14 +45,14 @@ namespace Comp229_TeamProject.Pages
                     {
                         FormsAuthentication.SetAuthCookie(username, true);
                         Session["Uname"] = username;
-                        Session["Role"] = "FDESK";
-                        Response.Redirect("~/Pages/Fdeskmain.aspx");
-                        
+                        Session["Role"] = "ADMIN";
+                        Response.Redirect("~/Pages/Adminmain.aspx");
+
                     }
                 }
                 else
                 {
-                    WarningLblLogin.Text = "No username was found";
+                    WarningLblLogin.Text = "No ID was found";
                 }
 
             }
@@ -71,4 +68,5 @@ namespace Comp229_TeamProject.Pages
 
         }
     }
+}
 }

@@ -184,7 +184,11 @@
   <ItemGroup>
     <Content Include="Assets\Icon.ico" />
     <Content Include="Content\personalCSS.css" />
+    <Content Include="Pages\Adminlogin.aspx" />
+    <Content Include="Pages\Adminmain.aspx" />
     <Content Include="Pages\Complaint.aspx" />
+    <Content Include="Pages\ComplaintDetails.aspx" />
+    <Content Include="Pages\FdeskComplaints.aspx" />
     <Content Include="Pages\FdeskMain.aspx" />
     <Content Include="Pages\FdeskStudentInfo.aspx" />
     <Content Include="Pages\Frontdesklogin.aspx" />
@@ -373,12 +377,40 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Pages\Adminlogin.aspx.cs">
+      <DependentUpon>Adminlogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Adminlogin.aspx.designer.cs">
+      <DependentUpon>Adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Adminmain.aspx.cs">
+      <DependentUpon>Adminmain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Adminmain.aspx.designer.cs">
+      <DependentUpon>Adminmain.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Complaint.aspx.cs">
       <DependentUpon>Complaint.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Complaint.aspx.designer.cs">
       <DependentUpon>Complaint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ComplaintDetails.aspx.cs">
+      <DependentUpon>ComplaintDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ComplaintDetails.aspx.designer.cs">
+      <DependentUpon>ComplaintDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FdeskComplaints.aspx.cs">
+      <DependentUpon>FdeskComplaints.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FdeskComplaints.aspx.designer.cs">
+      <DependentUpon>FdeskComplaints.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\FdeskMain.aspx.cs">
       <DependentUpon>FdeskMain.aspx</DependentUpon>

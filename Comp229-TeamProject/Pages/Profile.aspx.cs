@@ -13,9 +13,12 @@ namespace Comp229_TeamProject.Pages
   
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*Work around for not being able to get authentication to work. will send user to registration page if not authenticated. */
             bool isAuthenticated = (HttpContext.Current.User != null) && HttpContext.Current.User.Identity.IsAuthenticated;
-
+            string role = "Student";
+            if (Session["Role"] != null)
+            {
+                role = Session["Role"].ToString();
+            }
             if (!isAuthenticated)
             {
                 Response.Redirect("~/Pages/Registration.aspx");
@@ -36,6 +39,10 @@ namespace Comp229_TeamProject.Pages
             if (username == Convert.ToString(Session["Uname"]))
             {
                 editbtndiv.Visible = true;
+            }
+            if (role == "FDESK" || role == "ADMIN")
+            {
+                Fdeskdiv.Visible = true;
             }
             string memberid = null;
             SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
@@ -171,6 +178,38 @@ namespace Comp229_TeamProject.Pages
                 Response.Redirect(url);
             }
             
+        }
+
+        protected void Evictdiv_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
+            SqlCommand removeroom = new SqlCommand("DELETE FROM dbo.roomline WHERE studentID = @SID  ", conn);
+            SqlCommand getstudentid = new SqlCommand("SELECT StudentID FROM Students WHERE Username = @username", conn);
+            string user = "";
+            int SID;
+
+            if (Request.QueryString["UserName"] != null)
+            {
+                user = Convert.ToString(Request.QueryString["UserName"]);
+
+            }
+            try
+            {
+                conn.Open();
+                getstudentid.Parameters.AddWithValue("@username", user);
+                SID = Convert.ToInt32(getstudentid.ExecuteScalar());
+                removeroom.Parameters.AddWithValue("@SID", SID);
+                removeroom.ExecuteNonQuery();
+            }
+
+            finally
+            {
+                conn.Close();
+                String url = String.Format("Profile.aspx?Username={0}", user);
+                Response.Redirect(url);
+            }
+
+
         }
     }
 }
