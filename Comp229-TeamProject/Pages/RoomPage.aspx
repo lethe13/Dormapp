@@ -4,8 +4,6 @@
     <div class="divBody heightGamePages">
     <asp:Button CssClass="btn float" runat="server" ID="joinroomBtn" Text="+" OnClick="joinroomnBtn_Click"/>
     <h1><asp:Label runat="server" ID="roomnameLbl"></asp:Label> </h1>
-        <p>Max Occupants:<asp:Label ID="maxlbl" runat="server" Text="Label"></asp:Label>
-        </p>
   
         <br />
     Description: <asp:Label runat="server" ID="descLbl"></asp:Label>

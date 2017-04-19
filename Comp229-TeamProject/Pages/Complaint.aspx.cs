@@ -23,7 +23,7 @@ namespace Comp229_TeamProject.Pages
             {
                 Response.Redirect("~/Pages/Registration.aspx");
             }
-            if(role == "FDESK")
+            if(role == "FDESK" || role == "ADMIN")
             {
                 Response.Redirect("~/Pages/FdeskComplaints.aspx");
             }
