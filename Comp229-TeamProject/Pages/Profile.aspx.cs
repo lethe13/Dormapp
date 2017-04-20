@@ -100,7 +100,7 @@ namespace Comp229_TeamProject.Pages
             string lname = Lnamebx.Text;
             string username;
             SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
-            SqlCommand updateuser = new SqlCommand("UPDATE Students SET FName = @fname, Lname = @fname WHERE Username = @user", conn);
+            SqlCommand updateuser = new SqlCommand("UPDATE Students SET FName = @fname, Lname = @lname WHERE Username = @user", conn);
 
             if (Request.QueryString["UserName"] == null)
             {
