@@ -25,23 +25,27 @@ namespace Comp229_TeamProject.Pages
 
             {
                 SqlConnection conn = new SqlConnection(@"Data Source=dormapp.database.windows.net;Initial Catalog=Dorms;Persist Security Info=True;User ID=dormapp;Password=Magnum123");
-                SqlCommand addUser = new SqlCommand("INSERT INTO Fdesk(AdminID,Fname,LName, Password) VALUES(@ID,@lastName ,@firstName, @pwd)", conn);
+                SqlCommand addUser = new SqlCommand("INSERT INTO Fdesk(Fname,LName, Password) VALUES(@lastName ,@firstName, @pwd)", conn);
+                SqlCommand CheckUser = new SqlCommand("Select Lname FROM Fdesk WHERE Lname = @lastName AND Fname = @firstName", conn);
 
                 String lastName = lastNameTB.Text;
                 String firstName = firstNameTB.Text;
                 String pass = regPasswordTB.Text;
-                String username = regUsernameTB.Text;
+                
 
                 try
                 {
-                    addUser.Parameters.AddWithValue("@ID", username);
+                    
                     addUser.Parameters.AddWithValue("@lastName", lastName);
                     addUser.Parameters.AddWithValue("@firstName", firstName);
                     addUser.Parameters.AddWithValue("@pwd", pass);
 
                     conn.Open();
                     addUser.ExecuteNonQuery();
-                    WarningLbl.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                    CheckUser.Parameters.AddWithValue("@lastName", lastName);
+                    CheckUser.Parameters.AddWithValue("@firstName", firstName);
+                
+                    WarningLbl.Text  = Convert.ToString(CheckUser.ExecuteScalar()); 
                 }
                 /*  catch (SqlException ex)
                   {

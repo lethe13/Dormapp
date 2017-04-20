@@ -31,15 +31,6 @@ namespace Comp229_TeamProject.Pages {
         protected global::System.Web.UI.WebControls.TextBox lastNameTB;
         
         /// <summary>
-        /// regUsernameTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox regUsernameTB;
-        
-        /// <summary>
         /// regPasswordTB control.
         /// </summary>
         /// <remarks>
